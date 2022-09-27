@@ -1,7 +1,7 @@
 <?php
-require_once 'utils.php';
+require_once './utils.php';
 
-require_once 'models/Reservation.php';
+require_once './models/Reservation.php';
 
 $regexphoneNumber = "/^0[1-79][0-9]{8}$/";
 

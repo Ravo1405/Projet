@@ -101,9 +101,9 @@ class Reservation extends DbConnector
   }
 
   //Fonction pour modifier les informations d'une reservation
-  public function updateOneReservation(int $id): ?Reservation
+  public function updateOneReservation(int $id)
   {
-    $query = 'UPDATE `reservation` SET `lastname` = :lastname, `firstname` = :firstname, `phoneNumber` = :phoneNumber, `email` = :email, `shelterName` = :shelterName,  `startDate` = :startDate, `endDate` = :endDate,   WHERE `id` = :id';
+    $query = 'UPDATE `reservation` SET `lastname` = :lastname, `firstname` = :firstname, `phoneNumber` = :phoneNumber, `email` = :email, `shelterName` = :shelterName,  `startDate` = :startDate, `endDate` = :endDate   WHERE `id` = :id';
     $stmt = $this->pdo->prepare($query);
     $stmt->bindParam(':lastname', $this->lastname, PDO::PARAM_STR);
     $stmt->bindParam(':firstname', $this->firstname, PDO::PARAM_STR);
@@ -121,7 +121,7 @@ class Reservation extends DbConnector
   /**
    * Méthode qui permet de supprimer une réservation.
    */
-  public function deleteOneReservation(int $id): ?Reservation
+  public function deleteOneReservation(int $id): void
   { //Requête pour supprimer un RDV
     $query = 'DELETE FROM `reservation` 
     WHERE `id` = :id';

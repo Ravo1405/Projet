@@ -1,13 +1,13 @@
 <?php
 
-require 'controllers/ajout-reservationCtrl.php';
+require './controllers/ajout-reservationCtrl.php';
 
-require_once 'models/Reservation.php';
+require_once './models/Reservation.php';
 
 ?>
-<section id="services">
+<section id="reservation">
     <div class="shadow p-3 mb-5 bg-body rounded">
-      <h1 class="tittle">RERSERVATION</h1>
+      <h1 class="tittle text-center">RERSERVATION</h1>
         <?php if (!empty($errors)) {
             foreach ($errors as $error) { ?>
                 <div class="alert alert-danger"><?= $error ?></div>
@@ -20,7 +20,7 @@ require_once 'models/Reservation.php';
 
         <!--Création d'un formulaire de réservation-->
         <form action="" method="POST">
-            <h1 class="mb-3">Enregistrer une réservation</h1>
+            <h1 class=" text-center mb-3">Enregistrer une réservation</h1>
 
             <div class="input-group mb-3">
                 <label class="input-group-text" id="lastname-label" for="lastname">Nom de famille</label>
@@ -62,3 +62,4 @@ require_once 'models/Reservation.php';
         </form>
 
 </section>
+

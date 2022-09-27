@@ -1,13 +1,13 @@
-<?php 
+<?php
 
-include 'includes/header.php'; 
+include 'includes/header.php';
 
 ?>
 
 <main>
   <!-- section ACCUEIL -->
   <section id="accueil">
-    <div class="shadow p-5 mb-7 bg-body rounded"></div>
+    <div class="shadow p-3 mb-5 bg-body rounded"></div>
     <div>
       <h1>Bienvenue<br> Chez Kanto Location</h1>
     </div>
@@ -72,7 +72,7 @@ include 'includes/header.php';
       </div>
     </div>
   </section>
-  
+
   <!-- section SERVICES -->
   <section id="services">
     <div class="shadow p-3 mb-5 bg-body rounded">
@@ -125,6 +125,7 @@ include 'includes/header.php';
     </button>
   </section>
 
+  <!-- section ACTIVITE -->
   <section id="activity">
     <div class="shadow p-3 mb-5 bg-body rounded">
       <h1 class="tittle"><a href="isaloParc.php" id="isalo-parc-tittle">Activités Parc d'Isalo</a></h1>
@@ -193,10 +194,10 @@ include 'includes/header.php';
       </a>
     </div>
   </section>
-  
+
   <!-- section RESERVATIONS -->
   <?php include './includes/ajout-reservation.php'; ?>
-  
+
   <!-- Section CONTACT -->
   <section id="contact">
     <div class="shadow p-3 mb-5 bg-body rounded">
@@ -220,6 +221,46 @@ include 'includes/header.php';
       <div class="card-mdg">
         <img class="bg_image" src="./asset/img/carte_madagascar_isalo.jpg" alt="carte de Madagascar">
       </div>
+    </div>
+  </section>
+
+  <!-- section COMMENTAIRES -->
+  <section id='commentaires'>
+    <div class="shadow p-3 mb-5 bg-body rounded">
+      <h1 class="tittle">Commentaires</h1>
+      <form class="bg-white col-6">
+        <!-- Name input -->
+        <div class="form-outline mb-4">
+          <label class="form-label" for="form4Example1">Name</label>
+          <input type="text" id="form4Example1" class="form-control" />
+
+        </div>
+
+        <!-- Email input -->
+        <div class="form-outline mb-4">
+          <label class="form-label" for="form4Example2">Email address</label>
+          <input type="email" id="form4Example2" class="form-control" />
+        </div>
+
+        <!-- Message input -->
+        <div class="form-outline mb-4">
+          <label class="form-label" for="form4Example3">Message</label>
+          <textarea class="form-control" id="form4Example3" rows="4"></textarea>
+        </div>
+
+        <!-- Div pour les notes -->
+        <div class="py-2">
+          <a href="#"><i class="bi bi-star text-info" title="Bad"></i></a>
+          <a href="#"><i class="bi bi-star text-info" title="Poor"></i></a>
+          <a href="#"><i class="bi bi-star text-info" title="Ok"></i></a>
+          <a href="#"><i class="bi bi-star text-info" title="Goog"></i></a>
+          <a href="#"><i class="bi bi-star text-info" title="Excellent"></i></a>
+        </div>
+        <!-- Submit button -->
+        <button type="submit" name="send" class="btn bg-info btn-block text-white font-weight-bold  mb-4">
+          Send
+        </button>
+      </form>
     </div>
   </section>
 </main>

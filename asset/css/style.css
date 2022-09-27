@@ -74,7 +74,7 @@ a:hover {
 /*Acceuil css */
 #accueil {
   background-image: url("../img/piscine.jpg");
-  background-position:bottom;
+  background-position: bottom;
   background-size: cover;
   height: calc(100vh - 50px);
   background-repeat: no-repeat;
@@ -184,7 +184,7 @@ a:hover {
   height: 100%;
   width: 100%;
   opacity: 0;
-  transition: .8s ease;
+  transition: 0.8s ease;
   background-color: black;
 }
 
@@ -212,7 +212,9 @@ a:hover {
   padding: 0 5%;
   width: 100%;
   background-color: black;
-  filter: brightness(150%); /*Pour ajuster la luminosité,l'opacité et le contreste
+  filter: brightness(
+    150%
+  ); /*Pour ajuster la luminosité,l'opacité et le contreste
 
   /*box-shadow: 10px 5px 5px rgb(56, 53, 53);*/
 }
@@ -229,7 +231,8 @@ a:hover {
   margin-top: 5px;
 }
 
-#activity .carousel-item h5, p{
+#activity .carousel-item h5,
+p {
   text-align: center;
   color: black;
   font-weight: bold;
@@ -252,7 +255,7 @@ a:hover {
   text-align: center;
   color: black;
 }
-#activity .carousel-item h2{
+#activity .carousel-item h2 {
   color: black;
 }
 #activity .container p {
@@ -263,15 +266,17 @@ a:hover {
 }
 #activity .parc-description p {
   display: inline-block;
-  width: 950px;  
+  width: 950px;
   margin-top: 20px;
   text-align: center;
   font-size: 25px;
   font-weight: bold;
   margin-left: 550px;
 }
-.carousel-control-next:focus, .carousel-control-next:hover, 
-.carousel-control-prev:focus, .carousel-control-prev:hover{
+.carousel-control-next:focus,
+.carousel-control-next:hover,
+.carousel-control-prev:focus,
+.carousel-control-prev:hover {
   opacity: 0.2;
 }
 /* CSS page de RESERVATION*/
@@ -285,10 +290,8 @@ a:hover {
 form {
   padding: 20px;
   margin-left: 300px;
-  display: inline-block;
-  width: 80%;
   height: auto;
-  background: rgba(222, 163, 86, 0.5); /*transparent*/
+  background: #DEB887; /*transparent*/
   border-radius: 10px;
 }
 label {
@@ -308,6 +311,8 @@ input[type="password"] {
   width: 50%;
   height: 50px;
   margin: 10px;
+  line-height: 4em;
+  vertical-align: center;
   background: rgb(223, 214, 202);
 }
 input[type="submit"] {
@@ -394,7 +399,7 @@ h1:active:not(.select) {
 
 /* CSS page CONTACT*/
 #contact {
-  background-color:#0d0c0c;
+  background-color: #0d0c0c;
   margin-top: 10px;
   padding: 0 10%;
   width: 100%;

@@ -44,7 +44,7 @@ require 'controllers/liste-reservationCtrl.php';
             <?php } ?>
         </tbody>
     </table>
-    <a href="./includes/ajout-reservation.php">
+    <a href="index.php#reservation">
         <button class="btn-success mt-3 mb-3">AJOUTER UNE RESERVATION</button>
     </a>
      

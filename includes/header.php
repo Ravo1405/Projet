@@ -21,10 +21,11 @@
         <li class="nav-item"><a href="index.php#accueil" class="nav-link">Accueil</a></li>
         <li class="nav-item"><a href="index.php#bungalows" class="nav-link">Nos bungalows</a></li>
         <li class="nav-item"><a href="index.php#services" class="nav-link">Nos services</a></li>
-        <li class="nav-item"><a href="index.php#restaurant" class="nav-link">Notre restaurant</a></li>
         <li class="nav-item"><a href="index.php#activity" class="nav-link">Activités</a></li>
         <li class="nav-item"><a href="index.php#reservation" class="nav-link">Réservation</a></li>
         <li class="nav-item"><a href="index.php#contact" class="nav-link">Contact</a></li>
+        <li class="nav-item"><a href="index.php#commentaires" class="nav-link">Les commentaires</a></li>
+
       </ul>
       <div class="hamburger">
         <span class="bar"></span>
