@@ -1,0 +1,460 @@
+/*font-family: 'Montserrat', sans-serif;*/
+* {
+  padding: 0;
+  margin: 0;
+  text-decoration: none;
+  list-style: none;
+  box-sizing: border-box;
+}
+body {
+  font-family: monserrat;
+  background-color: rgb(186, 190, 189);
+}
+a {
+  text-decoration: 0;
+}
+
+.navbar {
+  background-color: black;
+  padding: 0px 25px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+.navbar a {
+  color: white;
+  font-size: 17px;
+  padding: 7px 13px;
+  border-radius: 10px;
+  text-transform: uppercase;
+  text-decoration: none;
+  list-style: none;
+  border-right: 2px solid orangered;
+}
+.nav-links {
+  float: right;
+  margin-right: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  text-transform: uppercase;
+  text-decoration: none;
+}
+.nav-item {
+  margin: 0 25px;
+  list-style: none;
+}
+a.active,
+a:hover {
+  background: rgb(225, 202, 164);
+  transition: 0.5s;
+}
+.hamburger {
+  display: none;
+  cursor: pointer;
+}
+/* Création du menu hamburger réactif avec html, css, JS*/
+.bar {
+  display: block;
+  width: 25px;
+  height: 3px;
+  margin: 5px auto;
+  -webkit-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
+  background: white;
+}
+.tittle {
+  text-align: center;
+  padding-top: 20px;
+  font-size: 40px;
+  font-weight: bold;
+}
+/*Acceuil css */
+#accueil {
+  background-image: url("../img/piscine.jpg");
+  background-position:bottom;
+  background-size: cover;
+  height: calc(100vh - 50px);
+  background-repeat: no-repeat;
+}
+#accueil h1 {
+  display: flex;
+  padding-top: 150px;
+  padding-left: 200px;
+  color: white;
+  font-family: Brush Script MT, Brush Script Std, cursive;
+  text-align: center;
+  font-size: 80px;
+  justify-content: center;
+  align-items: center;
+}
+
+/* .btn {
+  width: 200px;
+  height: 50px;
+  background: orangered;
+  color: white;
+  box-shadow: 0 0 10px;
+  font-size: 30px;
+  margin-top: 420px;
+  transition: 0.5s;
+}
+ .btn:hover{
+  background-color: orangered;
+  color:rgb(22, 19, 19);
+} */
+/* CSS page NOS BUNGALOWS*/
+#bungalows {
+  background-color: rgb(239, 244, 243);
+  margin-top: 10px;
+  padding: 0 10%;
+  width: 100%;
+}
+#bungalows .card-deck {
+  position: relative;
+  touch-action: manipulation;
+  margin: 15px;
+}
+#bungalows .card-footer {
+  background-color: rgb(59, 28, 28);
+  text-align: center;
+}
+#bungalows .card-footer a {
+  font-size: 16px;
+  color: white;
+}
+#bungalows .card-body {
+  text-align: center;
+}
+.card .card-title {
+  text-align: center;
+}
+.card-img {
+  width: 350px;
+  height: 250px;
+}
+/* CSS page NOS SERVICES*/
+#services {
+  margin-top: 10px;
+  padding: 0 10%;
+  width: 100%;
+  background: rgb(225, 202, 164);
+  filter: brightness(130%);
+}
+#services p {
+  text-align: center;
+  margin-top: 30px;
+  padding: 15px;
+  font-size: 25px;
+  font-weight: bold;
+}
+#services p a {
+  text-transform: uppercase;
+  text-decoration: none;
+  color: black;
+}
+#services .images img {
+  height: 50px;
+  width: 50px;
+}
+.card-title {
+  text-align: center;
+  margin: 15px;
+}
+.container {
+  position: relative;
+  width: 50%;
+}
+
+.images {
+  display: block;
+  width: 100%;
+  height: 250px;
+  margin: 20px;
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 100%;
+  width: 100%;
+  opacity: 0;
+  transition: .8s ease;
+  background-color: black;
+}
+
+.container:hover .overlay {
+  opacity: 2;
+}
+.text {
+  color: white;
+  font-size: 35px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  text-align: center;
+}
+
+/* CSS page ACTIVITES*/
+/*#activity{
+    background: linear-gradient(orange 25%, yellow 50%, red, rgb(243, 237, 229));
+}*/
+#activity {
+  margin-top: 10px;
+  padding: 0 5%;
+  width: 100%;
+  background-color: black;
+  filter: brightness(150%); /*Pour ajuster la luminosité,l'opacité et le contreste
+
+  /*box-shadow: 10px 5px 5px rgb(56, 53, 53);*/
+}
+#activity #isalo-parc-tittle {
+  text-transform: uppercase;
+  text-decoration: none;
+  color: rgb(162, 153, 153);
+}
+#activity .carousel-inner .d-block {
+  width: 950px;
+  height: 600px;
+  border-radius: 10px solid gray;
+  margin: auto;
+  margin-top: 5px;
+}
+
+#activity .carousel-item h5, p{
+  text-align: center;
+  color: black;
+  font-weight: bold;
+}
+.container {
+  display: flex;
+}
+.col-sm {
+  margin-top: 15px;
+  padding: 15px;
+  box-sizing: border-box;
+}
+.col-sm .text-description {
+  background: rgba(209, 35, 35, 0.1);
+  margin-bottom: 15px;
+  width: 600px;
+  height: 415px;
+}
+#activity .container h2 {
+  text-align: center;
+  color: black;
+}
+#activity .carousel-item h2{
+  color: black;
+}
+#activity .container p {
+  font-family: monserrat;
+  padding-left: 20px;
+  font-size: 25px;
+  color: rgb(22, 19, 19);
+}
+#activity .parc-description p {
+  display: inline-block;
+  width: 950px;  
+  margin-top: 20px;
+  text-align: center;
+  font-size: 25px;
+  font-weight: bold;
+  margin-left: 550px;
+}
+.carousel-control-next:focus, .carousel-control-next:hover, 
+.carousel-control-prev:focus, .carousel-control-prev:hover{
+  opacity: 0.2;
+}
+/* CSS page de RESERVATION*/
+#reservation {
+  margin-top: 10px;
+  background-image: url("../img/fond-palmier.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  filter: brightness(150%);
+}
+form {
+  padding: 20px;
+  margin-left: 300px;
+  display: inline-block;
+  width: 80%;
+  height: auto;
+  background: rgba(222, 163, 86, 0.5); /*transparent*/
+  border-radius: 10px;
+}
+label {
+  width: 40%;
+  display: inline-block;
+  text-align: left;
+  font-size: 25px;
+  padding-left: 30px;
+  font-weight: bold;
+}
+input[type="text"],
+input[type="number"],
+input[type="email"],
+input[type="password"] {
+  border: 1px solid black;
+  border-radius: 5px;
+  width: 50%;
+  height: 50px;
+  margin: 10px;
+  background: rgb(223, 214, 202);
+}
+input[type="submit"] {
+  position: relative;
+  padding: 10px;
+  margin-top: 10px;
+  font-size: 20px;
+  font-style: bold;
+  border: 2px solid black;
+  border-radius: 5px;
+  width: 90%;
+  background: rgb(223, 214, 202);
+}
+
+.none {
+  display: none !important;
+}
+
+.title {
+  display: flex;
+  width: 50%;
+  margin: auto;
+  justify-content: space-around;
+}
+h1:hover {
+  cursor: pointer;
+}
+h1:hover:not(.select) {
+  text-decoration: underline;
+  text-underline-offset: 10px;
+  text-decoration-color: rgb(27, 215, 221);
+}
+h1:active:not(.select) {
+  text-decoration: underline;
+  text-underline-offset: 10px;
+  text-decoration-color: rgb(135, 21, 201);
+}
+.bloc {
+  width: 50%;
+  margin: auto;
+  padding: 15px;
+}
+.select {
+  text-decoration: underline;
+  text-underline-offset: 10px;
+  text-decoration-color: rgb(135, 21, 201);
+}
+.labelInputBloc {
+  display: flex;
+  flex-direction: column;
+  width: 50%;
+  margin: auto;
+  margin-bottom: 20px;
+}
+.popUp {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  background-color: rgba(58, 56, 56, 0.411);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 500;
+}
+.popUpBoite {
+  background-color: white;
+  width: 350px;
+  /* height: 250px; */
+  box-shadow: 0px 0px 9px 1px rgba(73, 67, 67, 0.808);
+  padding: 20px;
+}
+.closePopUp {
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+  color: red;
+}
+.reservation {
+  width: 50%;
+  height: 500px;
+}
+
+/* CSS page CONTACT*/
+#contact {
+  background-color:#0d0c0c;
+  margin-top: 10px;
+  padding: 0 10%;
+  width: 100%;
+}
+.contact-section {
+  display: flex;
+}
+#contact .coordinates {
+  width: 500px;
+  height: 520px;
+  margin-left: 30px;
+  padding-top: 20px;
+  margin-bottom: 40px;
+  text-align: center;
+  font-size: 30px;
+  background-color: white;
+  color: white;
+}
+#contact .card-mdg {
+  float: right;
+  margin-left: 300px;
+  height: 400px;
+}
+/*MEDIA QUERIES*/
+/* A partir de cette taille d'écran, 
+- on veut que le menu hamburger s'affiche et en bloc
+- on veut créer l'animation qui va transformer le hamburger en X
+donc le haut et le bas va faire un X et le milieu disparaît
+*/
+@media (max-width: 760px) {
+  .hamburger {
+    display: block;
+  }
+  .hamburger.active .bar:nth-child(2) {
+    opacity: 0;
+  }
+  .hamburger.active .bar:nth-child(1) {
+    transform: translateY(8px) rotate(45deg);
+  }
+  .hamburger.active .bar:nth-child(3) {
+    transform: translateY(-8px) rotate(-45deg);
+  }
+  .nav-links {
+    position: fixed;
+    left: -100%;
+    top: 70px;
+    gap: 0;
+    flex-direction: column;
+    background-color: #262626;
+    width: 100%;
+    text-align: center;
+    transition: 0.3s;
+  }
+  .nav-item {
+    margin: 16px 0;
+  }
+  .nav-links.active {
+    left: 0;
+  }
+  header h1 {
+    display: none;
+  }
+}
