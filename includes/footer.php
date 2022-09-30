@@ -15,7 +15,7 @@
                     <a href="#"><i class="bi bi-telephone-fill"></i></a>
                 </div>
                 <p class="text-light py-4 m-0">&copy;Copyrigth 2022 - by Ravo, Tout Droit reservé</p>
-                <p class="parafooter text-light" id="legallink"> <a href="#">Mentions Légales</a> | <a href="#">CGV</a> |
+                <p class="parafooter" id="legallink"> <a href="#">Mentions Légales</a> | <a href="#">CGV</a> |
                     <a href="#">Protection des données</a> | <a href="#">Conditions d'utilisation</a>
                 </p>
             </div>

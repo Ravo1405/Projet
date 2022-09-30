@@ -2,22 +2,23 @@
 
 include 'includes/header.php';
 
+require 'controllers/costumerReviewCtrl.php';
+
+
 ?>
 
 <main>
   <!-- section ACCUEIL -->
-  <section id="accueil">
+  <section class="container-fluid" id="accueil">
     <div class="shadow p-3 mb-5 bg-body rounded"></div>
     <div>
       <h1>Bienvenue<br> Chez Kanto Location</h1>
     </div>
-    <!-- <button type="button" class="btn btn-orange btn-lg bottom-0 start-0" data-toggle="button" aria-pressed="false" autocomplete="off"">
-      <a href=" #bungalows" class="text-light">Réserver</a>
-    </button> -->
+    <a href=" #bungalows" class="btn btn-lg ml-5 mb-2 text-light">Réserver</a>
   </section>
 
   <!-- section BUNGALOWS -->
-  <section id="bungalows">
+  <section class="container-fluid" id="bungalows">
     <div class="shadow p-3 mb-5 bg-body rounded">
       <h1 class="tittle">Nos bungalows</h1>
       <p>Les bungalows de kantolocation sont des logements très agréables et confortables.
@@ -74,23 +75,23 @@ include 'includes/header.php';
   </section>
 
   <!-- section SERVICES -->
-  <section id="services">
-    <div class="shadow p-3 mb-5 bg-body rounded">
+  <section class="container-fluid" id="services">
+    <div class="shadow p-2 mb-2 bg-body rounded">
       <h1 class="tittle">Nos services</h1>
-      <p>Tous nos services sont inclus dans les tarifs de location affichés sauf le restaurant. Votre satisfation est notre priorité.</p>
+      <p class="service-text">Tous nos services sont inclus dans les tarifs de location affichés sauf le restaurant. Votre satisfation est notre priorité.</p>
     </div>
 
     <div class="container">
       <p>Resto</p>
-      <img src="./asset/img/mangue-crevettes.jpg" alt="image d'une assiette et des couverts" class="images">
+      <img src="./asset/img/mangue-crevettes.jpg" class="img-fluid" alt="image d'une salade de mangue et crevettes">
       <div class="overlay">
-        <div class="text">Nos plats sont cuisinés avec des produits frais. Le goût est au RVD!!</div>
+        <div class="text">Miam! Nos plats sont cuisinés avec des produits frais. Le goût est au RVD!!</div>
       </div>
     </div>
 
     <div class="container">
       <p>Wifi gratuit</p>
-      <img src="./asset/img_chevrons/wifi-gratuit.png" alt="image de wifi gratuit" class="images">
+      <img src="./asset/img_chevrons/wifi.jpg" class="img-fluid" alt="image d'une femme avec son ordinateur'">
       <div class="overlay">
         <div class="text">Vous profiterez d'une connexion internet gratuite!!</div>
       </div>
@@ -98,7 +99,7 @@ include 'includes/header.php';
 
     <div class="container">
       <p>Piscine</p>
-      <img src="./asset/img/petit-dej.jpg" alt="image d'une piscinne" class="images">
+      <img src="./asset/img/petit-dej.jpg" class="img-fluid" alt="image d'une piscinne">
       <div class="overlay">
         <div class="text">Une piscine pour vous rafraîchir et vous détendre!!</div>
       </div>
@@ -106,7 +107,7 @@ include 'includes/header.php';
 
     <div class="container">
       <p>Voiture</p>
-      <img src="./asset/img_chevrons/voiture.jpg" alt="image d'une voiture" class="images">
+      <img src="./asset/img_chevrons/voiture.jpg" class="img-fluid" alt="image d'une voiture">
       <div class="overlay">
         <div class="text">Vous aurez une voiture avec chauffeur pour vos promenades!!</div>
       </div>
@@ -114,21 +115,20 @@ include 'includes/header.php';
 
     <div class="container">
       <p>Vélos</p>
-      <img src="./asset/img_chevrons/velos.jpg" alt="image des vélos" class="images">
+      <img src="./asset/img_chevrons/velos.jpg" class="img-fluid" alt="image des vélos">
       <div class="overlay">
         <div class="text">Des vélos à votre dispositon pour une balade en couple ou en famille!!</div>
       </div>
     </div>
-
-    <button type="button" class="btn btn-orange btn-lg position-absolute bottom-0 start-0" data-toggle="button" aria-pressed="false" autocomplete="off">
-      <a href="#bungalows" class="text-light">Réserver</a>
-    </button>
+    <a href=" #bungalows" class="btn btn-lg ml-5 mb-2 text-light">Réserver</a>
   </section>
 
   <!-- section ACTIVITE -->
-  <section id="activity">
+  <section class="container-fluid" id="activity">
     <div class="shadow p-3 mb-5 bg-body rounded">
-      <h1 class="tittle"><a href="isaloParc.php" id="isalo-parc-tittle">Activités Parc d'Isalo</a></h1>
+      <h1 class="tittle">Activités Parc d'Isalo</h1>
+      <p>C'est le parc national le plus visité par les touristes internationaux, à Madagascar. Un magnifique et immense Parc National. Les couleurs et les paysages sont à tomber et plusieurs randonnées sont possibles, accompagné d'un guide. Une pause repas est organisée au cours du parcours, et si vous avez de la chance, dans la partie forêt, vous apercevrez des lémuriens.
+        Un savoureux mélange de crêtes, de bassins, de canyons, ne pas rater le coucher du soleil (entre 17h45 et 18h)</p>
     </div>
     <div id="carousel-image" class="carousel slide" data-ride="carousel">
       <ol class="carousel-indicators">
@@ -193,74 +193,102 @@ include 'includes/header.php';
         <span class="sr-only">Next</span>
       </a>
     </div>
+    <a href=" #bungalows" class="btn btn-lg ml-5 mb-2 text-light">Réserver</a>
+
   </section>
 
   <!-- section RESERVATIONS -->
   <?php include './includes/ajout-reservation.php'; ?>
 
   <!-- Section CONTACT -->
-  <section id="contact">
+  <section class="container-fluid" id="contact">
     <div class="shadow p-3 mb-5 bg-body rounded">
       <h1 class="tittle">Contact</h1>
     </div>
-    <div class="contact-section">
-      <div class="coordinates">
-        <p>
-          KANTO LOCATION<br>Quartier Nord De Ranohira-Isalo, <br> Ranohira 313,<br> Madagascar
-        </p>
-        <p>Mobile: +261 32 05 210 50</p>
-        <p>Téléphone: +261 34 07 205 53</p>
-        <p>Fax: +261 34 07 205 00</p>
-        <p id="email-adress">
-          <a href="mailto:info@kantolocation.com">info@kantolocation.com</a>
-          <br>
-          <a href="mailto:commerciale@kantolocation.com">commerciale@kantolocation.com</a>
-          <br>
-        </p>
-      </div>
-      <div class="card-mdg">
-        <img class="bg_image" src="./asset/img/carte_madagascar_isalo.jpg" alt="carte de Madagascar">
+
+    <div class="container">
+      <div class="row">
+        <div class="coordinates col-sm">
+          <p>
+            KANTO LOCATION<br>Quartier Nord De Ranohira-Isalo, <br> Ranohira 313,<br> Madagascar
+          </p>
+          <p>Mobile: +261 32 05 210 50</p>
+          <p>Téléphone: +261 34 07 205 53</p>
+          <p>Fax: +261 34 07 205 00</p>
+          <p id="email-adress">
+            <a href="mailto:info@kantolocation.com">info@kantolocation.com</a>
+            <br>
+            <a href="mailto:commerciale@kantolocation.com">commerciale@kantolocation.com</a>
+            <br>
+          </p>
+        </div>
+        <div class="col-sm">
+        <img class="coordinates" src="./asset/img/baobab.jpg" alt="image de baobab de Madagascar">
+        <p class="baobab">BAOBAB AMOUREUX</p>
+        </div>
+        <div class="col-sm">
+        <img class="coordinates" src="./asset/img/carte_madagascar_isalo.jpg" alt="carte de Madagascar">
+        </div>
       </div>
     </div>
+    <p class="a-bientot">A bientôt pour votre séjour chez "Kantolocation" à Madagascar</p>
+    
   </section>
 
   <!-- section COMMENTAIRES -->
-  <section id='commentaires'>
+  <section class="container-fluid" id='commentaires'>
     <div class="shadow p-3 mb-5 bg-body rounded">
-      <h1 class="tittle">Commentaires</h1>
-      <form class="bg-white col-6">
-        <!-- Name input -->
-        <div class="form-outline mb-4">
-          <label class="form-label" for="form4Example1">Name</label>
-          <input type="text" id="form4Example1" class="form-control" />
-
-        </div>
-
-        <!-- Email input -->
-        <div class="form-outline mb-4">
-          <label class="form-label" for="form4Example2">Email address</label>
-          <input type="email" id="form4Example2" class="form-control" />
-        </div>
-
-        <!-- Message input -->
-        <div class="form-outline mb-4">
-          <label class="form-label" for="form4Example3">Message</label>
-          <textarea class="form-control" id="form4Example3" rows="4"></textarea>
-        </div>
-
-        <!-- Div pour les notes -->
-        <div class="py-2">
+      <h1 class="tittle text-center">Commentaires</h1>
+      
+      <form class="form-commentaires col-6" method="POST">
+         <!-- Div pour les notes -->
+         <div class="star py-2">
           <a href="#"><i class="bi bi-star text-info" title="Bad"></i></a>
           <a href="#"><i class="bi bi-star text-info" title="Poor"></i></a>
           <a href="#"><i class="bi bi-star text-info" title="Ok"></i></a>
           <a href="#"><i class="bi bi-star text-info" title="Goog"></i></a>
           <a href="#"><i class="bi bi-star text-info" title="Excellent"></i></a>
         </div>
+        <!-- Name input -->
+        <div class="form-outline mb-4">
+          <label class="form-label" for="nom">Votre nom</label>
+          <input type="text" class="form-control text-center" name="lastname" id="nom" value="<?= $lastname ?>" placeholder="votre nom">
+        </div>
+
+        <!-- Email input -->
+        <div class="form-outline mb-4">
+          <label class="form-label" for="email">Votre adresse mail</label>
+          <input type="text" class="form-control text-center" name="email" id="email" value="<?= $email ?>" placeholder="votre email">
+        </div>
+
+        <!-- datePost input -->
+        <div class="form-outline mb-4">
+          <label class="form-label" for="date">Date d'aujourd'hui</label>
+          <input type="date" class="form-control text-center" name="datePost" id="date" value="<?= $datePost ?>" placeholder="la date d'aujourd'hui">
+        </div>
+
+        <!-- Message input -->
+        <div class="form-outline mb-4">
+          <label class="form-label" for="comment">Votre commentaires</label>
+          <textarea class="form-control text-center" name="comment" id="comment" rows="4" value="<?= $comment ?>" placeholder="votre commentaires"></textarea>
+        </div>
+
         <!-- Submit button -->
-        <button type="submit" name="send" class="btn bg-info btn-block text-white font-weight-bold  mb-4">
-          Send
+        <button type="submit" name="send" class="btn-commentaires btn-block text-white font-weight-bold  mb-3">
+          SEND
         </button>
       </form>
+      <h2 class="tittle text-center m-3">LES COMMENTAIRES</h2>
+      <?php
+      foreach ($commentsList as $costumerReview) { ?>
+        <div class="card w-50">
+          <div class="card-body">
+            <h5 class="card-title"><?= $costumerReview->lastname; ?></h5>
+            <p class="card-text"><?= $costumerReview->datePost; ?></p>
+            <p class="card-text"><?= $costumerReview->comment; ?></p>
+          </div>
+        </div>
+      <?php } ?>
     </div>
   </section>
 </main>
