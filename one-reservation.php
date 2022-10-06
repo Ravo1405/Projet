@@ -1,18 +1,15 @@
 <?php
-
 include './includes/header.php';
-
 require 'controllers/one-reservationCtrl.php';
-
 ?>
 
-<main class="container-fluid mt-3 mb-3">
+<main class="one-reservation">
     <?php if (!empty($errors)) {
         foreach ($errors as $error) { ?>
             <div class="alert alert-danger"><?= $error ?></div>
         <?php }
     } else { ?>
-        <div class="card">
+        <div class="card-one-reservation">
             <h1 class="card-header text-center">INFORMATIONS COMPLETES D'UNE RESERVATION</h1>
             <div class="card-body">
                 <ul class="list-group list-group-flush border-0 w-100">
@@ -51,56 +48,56 @@ require 'controllers/one-reservationCtrl.php';
             </div>
         </div>
 
-        <form id="updateReservation" class="m-5 mx-auto" method="POST" action="">
+        <form class="form-reservation" method="POST" action="">
             <input type="hidden" name="hidden" value="<?= $oneReservation->id ?>">
-            <fieldset class="row d-flex flex-column mb-4">
+            <fieldset class="row-fieldset d-flex flex-column mb-4">
                 <legend class="text-center mb-5">MODIFIER OU SUPPRIMER UN CHAMP</legend>
                 <div class="form-label row mb-3">
                     <label for="lastname" class="form-label col-sm-3">Nom</label>
                     <div class="col-sm-9">
-                        <input type="text" class="form-control" name="lastname" id="lastname" value="<?= $oneReservation->lastname ?>" placeholder="lastname">
+                        <input type="text" class="form-control text-center" name="lastname" id="lastname" value="<?= $oneReservation->lastname ?>" placeholder="lastname">
                         <span class="text-danger"><?= isset($errors['lastname']) ? $errors['lastname'] : '' ?></span>
                     </div>
                 </div>
                 <div class="form-label row mb-3">
                     <label for="firstname" class="form-label col-sm-3">Prénom</label>
                     <div class="col-sm-9">
-                        <input type="text" class="form-control" name="firstname" id="firstname" value="<?= $oneReservation->firstname ?>" placeholder="firstName">
+                        <input type="text" class="form-control text-center" name="firstname" id="firstname" value="<?= $oneReservation->firstname ?>" placeholder="firstName">
                         <span class="text-danger"><?= isset($errors['firstname']) ? $errors['firstname'] : '' ?></span>
                     </div>
                 </div>
                 <div class="form-label row mb-3">
-                    <label for="phone" class="form-label col-sm-3">Numéro de téléphone</label>
+                    <label for="phone" class="form-label col-sm-3">Téléphone</label>
                     <div class="col-sm-9">
-                        <input type="text" class="form-control" name="phoneNumber" id="phone" placeholder="Format: 06 12 34 56 78 OU 02 34 56 78 91">
+                        <input type="text" class="form-control text-center" name="phoneNumber" id="phone" placeholder="Format: 06 12 34 56 78 ">
                         <span class="text-danger"><?= isset($errors['phoneNumber']) ? $errors['phoneNumber'] : '' ?></span>
                     </div>
                 </div>
                 <div class="form-label row mb-3">
-                    <label for="mail" class="form-label col-sm-3">Adresse courriel</label>
+                    <label for="mail" class="form-label col-sm-3">Mail</label>
                     <div class="col-sm-9">
-                        <input type="email" class="form-control" name="email" id="mail" value="<?= $oneReservation->email ?>" placeholder="name@example.com">
+                        <input type="email" class="form-control text-center" name="email" id="mail" value="<?= $oneReservation->email ?>" placeholder="name@example.com">
                         <span class="text-danger"><?= isset($errors['email']) ? $errors['email'] : '' ?></span>
                     </div>
                 </div>
                 <div class="form-label row mb-3">
                     <label for="shelter" class="form-label col-sm-3">Nom du bungalow</label>
                     <div class="col-sm-9">
-                        <input type="text" class="form-control" name="shelterName" id="shelter" value="<?= $oneReservation->shelterName ?>" placeholder="2015-09-02">
+                        <input type="text" class="form-control text-center" name="shelterName" id="shelter" value="<?= $oneReservation->shelterName ?>" placeholder="2015-09-02">
                         <span class="text-danger"><?= isset($errors['shelterName']) ? $errors['shelterName'] : '' ?></span>
                     </div>
                 </div>
                 <div class="form-label row mb-3">
                     <label for="start" class="form-label col-sm-3">Du</label>
                     <div class="col-sm-9">
-                        <input type="date" class="form-control" name="startDate" id="start" value="<?= $oneReservation->startDate ?>" placeholder="2015-09-02">
+                        <input type="date" class="form-control text-center" name="startDate" id="start" value="<?= $oneReservation->startDate ?>" placeholder="2015-09-02">
                         <span class="text-danger"><?= isset($errors['startDate']) ? $errors['startDate'] : '' ?></span>
                     </div>
                 </div>
                 <div class="form-label row mb-3">
                     <label for="end" class="form-label col-sm-3">Au</label>
                     <div class="col-sm-9">
-                        <input type="date" class="form-control" name="endDate" id="end" value="<?= $oneReservation->endDate ?>" placeholder="2015-09-02">
+                        <input type="date" class="form-control text-center" name="endDate" id="end" value="<?= $oneReservation->endDate ?>" placeholder="2015-09-02">
                         <span class="text-danger"><?= isset($errors['endDate']) ? $errors['endDate'] : '' ?></span>
                     </div>
                 </div>
@@ -108,8 +105,8 @@ require 'controllers/one-reservationCtrl.php';
             </fieldset>
             <article class="row mb-5">
                 <div class="vstack align-items-center col-md-5 mx-auto mb-5">
-                    <button class="btn btn-primary mt-3" type="submit" name="update">MODIFIER</button>
-                    <button class="btn btn-primary mt-3" type="submit" name="delete" onclick="return confirm('Really Delete?');">SUPPRIMER</button>
+                    <button class="btn btn-primary mx-auto mt-3" type="submit" name="update">MODIFIER</button>
+                    <button class="btn btn-primary mx-auto mt-3" type="submit" name="delete" onclick="return confirm('Really Delete?');">SUPPRIMER</button>
                 </div>
             </article>
         </form>

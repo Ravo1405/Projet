@@ -1,9 +1,7 @@
 <?php
-
 include 'includes/header.php';
 
 require 'controllers/costumerReviewCtrl.php';
-
 
 ?>
 
@@ -81,7 +79,7 @@ require 'controllers/costumerReviewCtrl.php';
       <p class="service-text">Tous nos services sont inclus dans les tarifs de location affichés sauf le restaurant. Votre satisfation est notre priorité.</p>
     </div>
 
-    <div class="container">
+    <div class="div-services">
       <p>Resto</p>
       <img src="./asset/img/mangue-crevettes.jpg" class="img-fluid" alt="image d'une salade de mangue et crevettes">
       <div class="overlay">
@@ -89,7 +87,7 @@ require 'controllers/costumerReviewCtrl.php';
       </div>
     </div>
 
-    <div class="container">
+    <div class="div-services">
       <p>Wifi gratuit</p>
       <img src="./asset/img_chevrons/wifi.jpg" class="img-fluid" alt="image d'une femme avec son ordinateur'">
       <div class="overlay">
@@ -97,7 +95,7 @@ require 'controllers/costumerReviewCtrl.php';
       </div>
     </div>
 
-    <div class="container">
+    <div class="div-services">
       <p>Piscine</p>
       <img src="./asset/img/petit-dej.jpg" class="img-fluid" alt="image d'une piscinne">
       <div class="overlay">
@@ -105,7 +103,7 @@ require 'controllers/costumerReviewCtrl.php';
       </div>
     </div>
 
-    <div class="container">
+    <div class="div-services">
       <p>Voiture</p>
       <img src="./asset/img_chevrons/voiture.jpg" class="img-fluid" alt="image d'une voiture">
       <div class="overlay">
@@ -113,7 +111,7 @@ require 'controllers/costumerReviewCtrl.php';
       </div>
     </div>
 
-    <div class="container">
+    <div class="div-services">
       <p>Vélos</p>
       <img src="./asset/img_chevrons/velos.jpg" class="img-fluid" alt="image des vélos">
       <div class="overlay">
@@ -222,33 +220,27 @@ require 'controllers/costumerReviewCtrl.php';
             <br>
           </p>
         </div>
-        <div class="col-sm">
-        <img class="coordinates" src="./asset/img/baobab.jpg" alt="image de baobab de Madagascar">
-        <p class="baobab">BAOBAB AMOUREUX</p>
+        <div class="col-sm coordinates-img  coordinate-baobab">
+          <img class="coordinates" src="./asset/img/baobab.jpg" alt="image de baobab de Madagascar">
+          <p class="baobab">BAOBAB AMOUREUX</p>
         </div>
-        <div class="col-sm">
-        <img class="coordinates" src="./asset/img/carte_madagascar_isalo.jpg" alt="carte de Madagascar">
+        <div class="col-sm coordinates-img">
+          <img class="coordinates" src="./asset/img/carte_madagascar_isalo.jpg" alt="carte de Madagascar">
         </div>
       </div>
     </div>
     <p class="a-bientot">A bientôt pour votre séjour chez "Kantolocation" à Madagascar</p>
-    
+
   </section>
 
-  <!-- section COMMENTAIRES -->
+  <!-- section COMMENTAIRES ET NOTES-->
   <section class="container-fluid" id='commentaires'>
     <div class="shadow p-3 mb-5 bg-body rounded">
       <h1 class="tittle text-center">Commentaires</h1>
-      
+
+
       <form class="form-commentaires col-6" method="POST">
-         <!-- Div pour les notes -->
-         <div class="star py-2">
-          <a href="#"><i class="bi bi-star text-info" title="Bad"></i></a>
-          <a href="#"><i class="bi bi-star text-info" title="Poor"></i></a>
-          <a href="#"><i class="bi bi-star text-info" title="Ok"></i></a>
-          <a href="#"><i class="bi bi-star text-info" title="Goog"></i></a>
-          <a href="#"><i class="bi bi-star text-info" title="Excellent"></i></a>
-        </div>
+
         <!-- Name input -->
         <div class="form-outline mb-4">
           <label class="form-label" for="nom">Votre nom</label>
@@ -269,19 +261,19 @@ require 'controllers/costumerReviewCtrl.php';
 
         <!-- Message input -->
         <div class="form-outline mb-4">
-          <label class="form-label" for="comment">Votre commentaires</label>
+          <label class="form-label" for="comment">Vos commentaires</label>
           <textarea class="form-control text-center" name="comment" id="comment" rows="4" value="<?= $comment ?>" placeholder="votre commentaires"></textarea>
         </div>
 
         <!-- Submit button -->
         <button type="submit" name="send" class="btn-commentaires btn-block text-white font-weight-bold  mb-3">
-          SEND
+          Envoyer
         </button>
       </form>
       <h2 class="tittle text-center m-3">LES COMMENTAIRES</h2>
       <?php
       foreach ($commentsList as $costumerReview) { ?>
-        <div class="card w-50">
+        <div class="card">
           <div class="card-body">
             <h5 class="card-title"><?= $costumerReview->lastname; ?></h5>
             <p class="card-text"><?= $costumerReview->datePost; ?></p>

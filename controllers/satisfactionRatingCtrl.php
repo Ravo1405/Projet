@@ -1,53 +1,67 @@
 <?php
 require_once './utils.php';
 
-require_once './models/CostumerReview.php';
+require_once './models/SatisfactionRating.php';
 
 require_once './models/Reservation.php';
 
 $errors = [];
 $success = false;
-$costumerReview = new CostumerReview();
+$satisfactionRating = new SatisfactionRating();
 $reservation = new Reservation;
 
 $lastname = isset($_POST["lastname"]) ? $_POST["lastname"] : "";
-$email = isset($_POST["email"]) ? $_POST["email"] : "";
-$datePost = isset($_POST["datePost"]) ? $_POST["datePost"] : "";
-$comment = isset($_POST["comment"]) ? $_POST["comment"] : "";
+$valu = isset($_POST["valu"]) ? $_POST["valu"] : "";
+$bad = "";
+$poor = "";
+$ok = "";
+$good = "";
+$excellent = "";
 
-// Vérification de l'envoi du formulaire
-if(isset($_POST['send'])) {
+// Vérification du nom de famille
+if(empty($_POST['lastname'])) {
+    $errors[] = "Merci de renseigner un nom";
+}
+else if(strlen($_POST['lastname']) > 25) {
+    $errors[] = "Le prénom doit contenir moins de 25 caractères";
+}
+else {
+    $satisfactionRating->lastname = htmlspecialchars($_POST['lastname']);
+}
+// Vérification de l'adresse email
+if(empty($_POST['email'])) {
+    $errors[] = "Merci de renseigner une adresse email";
+}
+else if(!filter_var($_POST['email'], FILTER_VALIDATE_EMAIL)) {
+    $errors[] = "Format d'adresse email incorrect";
+}
+else {
+    $satisfactionRating->email = $_POST['email'];
+}
 
-    // Vérification du nom de famille
-    if(empty($_POST['lastname'])) {
-        $errors[] = "Merci de renseigner un nom";
-    }
-    else if(strlen($_POST['lastname']) > 25) {
-        $errors[] = "Le prénom doit contenir moins de 25 caractères";
-    }
-    else {
-        $costumerReview->lastname = htmlspecialchars($_POST['lastname']);
-    }
-    // Vérification de l'adresse email
-    if(empty($_POST['email'])) {
-        $errors[] = "Merci de renseigner une adresse email";
-    }
-    else if(!filter_var($_POST['email'], FILTER_VALIDATE_EMAIL)) {
-        $errors[] = "Format d'adresse email incorrect";
-    }
-    else {
-        $costumerReview->email = $_POST['email'];
-    }
-     // Vérification si la date de publication est la date d'aujourd'hui
-     if(empty($_POST['datePost'])) {
-        $errors[] = "Merci de marquer la date d'aujourd'hui!";
-    }
-    else if(!validateDate($_POST['datePost'], 'Y-m-d')) {
-        $errors[] = "Format de date incorrect";
-    }
-    else {
-        $costumerReview->datePost = $_POST['datePost'];
-    }
+// Si la première étoile est cliquée, on affiche 1 étoile
+if(isset($_POST['bad'])) {
+    $bad = $_POST['bad'];
+}
+    
+// Si la deuxième étoile est cliquée, on affiche 2 étoiles
+if(isset($_POST['poor'])) {
+    for ($i = 1; $poor < 3; $i++);
+}
+// Si la troisième étoile est cliquée, on affiche 3 étoile
+// Si la quatrième étoile est cliquée, on affiche 4 étoile
+// Si la cinquème étoile est cliquée, on affiche 5 étoile
+
+
+$vote = $satisfactionRating->getVote();
+
+    
+    
+    
+    
+    
+    
+     
      // Vérification du commentaire
      if(empty($_POST['comment'])) {
         $errors[] = "Merci de saisir un commentaire";
@@ -70,12 +84,15 @@ if(isset($_POST['send'])) {
         // Appel de la méthode d'insertion du commentaire
         $costumerReview->createComment();
         $success = true;
+        var_dump($costumerReview);
     }
+    var_dump($errors);
+    var_dump($_POST);
 }
 
 // On appelle la méthode getReservationList pour afficher la liste des commentaires
 
-$commentsList = $costumerReview->getCommentsList();
+$vote = $satisfactionRating->getVote();
 
 // //On appelle la méthode deleteComment pour supprimer un commentaire
 // if (isset($_POST['delete'])) {

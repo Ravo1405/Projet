@@ -54,8 +54,7 @@ class CostumerReview extends DbConnector
     return true;
   }
 
-  // Méthode qui permet de récupérer
-  // les informations par l'id là où une réservation existe déjà
+  // On récupère cette réservation par son id
    public function getReservation() 
    {
      $query = "SELECT `id` FROM `reservation` WHERE `lastname` = :lastname AND `email` = :email";
@@ -98,12 +97,12 @@ class CostumerReview extends DbConnector
   /**
    * Méthode qui permet de supprimer un commentaire
    */
-  public function deleteComment(int $id): void
-  { //Requête pour supprimer un commentaire
-    $query = 'DELETE FROM `costumerReview` 
-    WHERE `id` = :id';
-    $stmt = $this->pdo->prepare($query);
-    $stmt->bindParam(':id', $id, PDO::PARAM_INT);
-    $stmt->execute();
-  }
+  // public function deleteComment(int $id): void
+  // { //Requête pour supprimer un commentaire
+  //   $query = 'DELETE FROM `costumerReview` 
+  //   WHERE `id` = :id';
+  //   $stmt = $this->pdo->prepare($query);
+  //   $stmt->bindParam(':id', $id, PDO::PARAM_INT);
+  //   $stmt->execute();
+  // }
 }

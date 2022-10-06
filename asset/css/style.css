@@ -13,63 +13,42 @@ var(--primary-color); */
 }
 body {
   font-family: Georgia, 'Times New Roman', Times, serif;
-  background-color: rgb(186, 190, 189);
-}
+  background-color: beige;
 
-.navbar {
+/* CSS barre de navigation */
+}
+.navbar-toggler {
+  color: white;
+}
+.navbar-expand-lg {
   position: fixed;
   z-index: 1;
   top: 0;
   height: 100px;
   width: 100%;
   background-color: black;
-  padding: 0px 25px;
   align-items: center;
-  justify-content: space-between;
-  align-items: center;
+  /* justify-content: space-between; */
 }
-.navbar a {
+.navbar-nav {
+  margin-left: 350px;
+}
+.nav-link {
+  margin: 10px;
   color: white;
   font-size: 16px;
-  padding: 7px;
   text-transform: uppercase;
   list-style: none;
   border-radius: 10px;
   border-right: 2px solid orangered;
 }
-.nav-links {
-  float: right;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  text-transform: uppercase;
-}
-.nav-item {
-  margin: 0 1em;
-  list-style: none;
-}
-a.active,
-a:hover {
+
+.nav-link:hover {
   background: rgb(225, 202, 164);
   transition: 0.5s;
 }
-.hamburger {
-  display: none;
-  cursor: pointer;
-}
-/* Création du menu hamburger réactif avec html, css, JS*/
-.bar {
-  display: block;
-  width: 25px;
-  height: 3px;
-  margin: 5px auto;
-  -webkit-transition: all 0.3s ease-in-out;
-  transition: all 0.3s ease-in-out;
-  background: white;
-}
-/* main {
-  top: 100px;
-} */
+
+/* ------------------------------------- */
 .tittle {
   color: rgb(229, 118, 28);
   text-align: center;
@@ -136,6 +115,14 @@ a:hover {
   height: 250px;
 }
 
+/* CSS chaque bungalow */
+.bungalow {
+  margin-top:6em;
+  padding-top: 1em;
+  text-align: center;
+  background-color: bisque;
+}
+
 /* CSS page NOS SERVICES*/
 #services {
   margin-top: 0.5em;
@@ -150,8 +137,9 @@ a:hover {
   text-align: center;
 }
 
-#services .container {
+#services .div-services {
   margin-top: 2em;
+  margin-left: 20em;
   position: relative;
   width: 50%;
 }
@@ -174,13 +162,12 @@ a:hover {
   opacity: 0;
   transition: 0.8s ease;
   background-color: black;
-  border-radius: 50%;
 }
 
-#services .container:hover .overlay {
+#services .div-services:hover .overlay {
   opacity: 2;
 }
-#services .container .text {
+#services .div-services .text {
   color: white;
   position: absolute;
   top: 50%;
@@ -242,34 +229,20 @@ a:hover {
 }
 
 /* CSS page de RESERVATION*/
-#reservation {
-  width: 100%;
-  margin-top: 0.5em;
-  background-color: rgb(71, 71, 71);
-  background-size: cover;
-  background-repeat: no-repeat;
-  filter: brightness(150%);
+
+.form-reservation .text {
+  text-align: center;
 }
 
-.form-reservation {
-  width: 60%;
-  padding: 20px;
-  margin-left: 320px;
-  height: auto;
-  background: white; /*transparent*/
-  border: black solid 2px;
-  border-radius: 10px;
-}
 label, input {
     display: inline-block;
-    width: 150px;
-    text-align: right;
+    width: 200px;
 }
-.input-group-text {
+.coordonées {
   color: black;
   text-align: left;
   font-size: 18px;
-  padding-left: 5px;
+  padding-left: 100px;
   font-weight: bold;
 }
 #reservation .form-control {
@@ -285,6 +258,21 @@ label, input {
   margin-left: 24em;
 }
 
+/* CSS page de one RESERVATION*/
+.one-reservation {
+  margin-top: 6em;
+}
+.card-one-reservation {
+  width: 48%;
+  margin-left: 300px;
+}
+.form-reservation .form-label {
+  justify-items: left; 
+}
+.row-fieldset {
+  width: 60%;
+  margin-left: 300px;
+}
 /* CSS page CONTACT*/
 #contact {
   background-color: white;
@@ -317,9 +305,6 @@ label, input {
 /* CSS page COMMENTAIRES */
 .star {
   display: flex;
-  /* justify-content: space-between;
-  width: 60px;
-  height: 60px; */
 }
 .form-commentaires {
   margin-left: 20em;
@@ -333,6 +318,7 @@ label, input {
 
 /* CSS affichge COMMENTAIRES */
 .card {
+  width: 50%;
   margin-left: 20em;
 }
 
@@ -340,43 +326,220 @@ label, input {
 .parafooter {
   color: white;
 }
+
 /*MEDIA QUERIES*/
-/* A partir de cette taille d'écran, 
-- on veut que le menu hamburger s'affiche et en bloc
-- on veut créer l'animation qui va transformer le hamburger en X
-donc le haut et le bas va faire un X et le milieu disparaît
-*/
-@media (max-width: 760px) {
-  .hamburger {
-    display: block;
+
+/* Ceci s'applique aux écrans minimim 1520px de largeur */
+@media screen and (min-width: 1520px) {
+
+}
+
+
+/* Ceci s'applique aux écrans au dessous de 620px de largeur */
+@media screen and (max-width: 620px) {
+  .navbar-expand-lg {
+    height: 100px;
   }
-  .hamburger.active .bar:nth-child(2) {
-    opacity: 0;
+  .tittle {
+    color: rgb(229, 118, 28);
+    text-align: center;
+    padding-top: 0.1em;
+    font-size: 1.5em;
+    font-weight: bold;
   }
-  .hamburger.active .bar:nth-child(1) {
-    transform: translateY(8px) rotate(45deg);
+  .shadow {
+    width: 90%;
   }
-  .hamburger.active .bar:nth-child(3) {
-    transform: translateY(-8px) rotate(-45deg);
+  #accueil {
+    height: 100%;
   }
-  .nav-links {
-    position: fixed;
+  #accueil .btn {
+    width: 10em;
+    height: 2.5em;
+    font-size: 1em;
+    text-align: center;
+  }
+  /*CSS section bungalows */
+  #bungalows {
+    padding: 0 10%; 
+  }
+  .shadow {
+    width: 100%;
+  }
+  .card-img {
+    width: 100%;
+  }
+  .card-deck .card {
+    flex: none;
+  }
+  .service-text {
+    font-size: 0.4em;
+  }
+
+  /* css section SERVICES */
+  #services .div-services {
+    margin-left: 5em;
+  }
+  #services .div-services p {
+    font-size: 2em;
+  }
+  
+  #services .img-fluid {
+    margin: none;
+    height: 150px;
+  }
+  #services .overlay {
+    height: 110%;
+    width: 150%;
+    margin: 10px;
+  }
+  #services .btn {
+    width: 10em;
+    height: 2.5em;
+    font-size: 1em;
+    text-align: center;
+  }
+
+  /* CSS section RESERVATION */
+  .row-fieldset {
+    width: 95%;
+    margin-left: 100px;
+  }
+  .form-reservation .text {
+    text-align: start;
+  }
+  .text-center {
+    text-align: none;
+  }
+  .coordonées {
+    padding-left: 195px;
+  }
+  .btn:not(:disabled):not(.disabled) {
+    margin-left: 6em;
+  }
+
+  .coordinates-img {
+    display: none;
+  }
+
+  /* CSS section COMMENTAIRES */
+  #commentaires .form-commentaires {
+    margin-left: 10em;
+  }
+
+  .btn-commentaires {
+    width: 13em;
+    margin-left: 0;
+  }
+  .card {
+    width: 100%;
+    margin-left: 0;
+  }
+
+}
+
+/* Ceci s'applique aux écrans au dessous de 980px de largeur */
+@media screen and (max-width: 980px) {
+  .navbar-expand-lg {
+    height: 120px;
+  }
+  i.bi-list {
+    font-size: 60px;
+    margin-bottom: 5px;
+  }
+
+  .nav-link {
+    /* position: relative;
     left: -100%;
     top: 70px;
-    gap: 0;
+    gap: 0; */
     flex-direction: column;
     background-color: #262626;
-    width: 100%;
+    font-size: 10px;
+    width: 30%;
+    border-right: none;
     text-align: center;
     transition: 0.3s;
   }
   .nav-item {
     margin: 16px 0;
+    /* align-items: flex-end;  */
   }
   .nav-links.active {
     left: 0;
   }
-  header h1 {
+  #accueil h1 {
     display: none;
   }
+
+  #bungalows {
+    padding: 0;
+  }
+  #bungalows .card-deck {
+    margin: 0;
+  }
+  #bungalows .card-img {
+    width: 290px;
+  }
+
+  /* CSS section SERVICES */
+/* .service-text {
+    font-size: 1em;
+  }
+  */
+  #services .div-services {
+    margin-left: 10em;
+  }
+  #services .div-services p {
+    font-size: 2em;
+  }
+  
+  #services .img-fluid {
+    margin: none;
+    height: 200px;
+  }
+  #services .overlay {
+    height: 110%;
+    width: 150%;
+    margin: 10px;
+  }
+  #services .btn {
+    width: 10em;
+    height: 2.5em;
+    font-size: 1em;
+    text-align: center;
+  }
+
+  /* CSS de la section RESERVATION */
+  .form-reservation .text {
+    text-align: start;
+  }
+  .btn:not(:disabled):not(.disabled) {
+    margin-left: 6em;
+  }
+
+  /* CSS section CONTACT */
+  /* #contact .row {
+    display: none;
+  } */
+  .coordinate-baobab {
+    display: none;
+  }
+  .baobab {
+    display: none;
+  }
+
+  /* CSS section COMMENTAIRES */
+  .form-commentaires {
+    margin-left: 15em;
+  }
+  .btn-commentaires {
+    margin-left: 3em;
+  }
+
+  /* CSS affichage COMMENTAIRES */
+  .card {
+    margin-left: 15em;
+  }
 }
+

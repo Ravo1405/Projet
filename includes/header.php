@@ -15,21 +15,21 @@
 
 <body>
   <header>
-    <nav class="navbar">
+    <nav class="navbar navbar-expand-lg">
       <img src="asset/img/logo.png" alt="logo image">
-      <ul class="nav-links">
-        <li class="nav-item"><a href="index.php#accueil" class="nav-link">Accueil</a></li>
-        <li class="nav-item"><a href="index.php#bungalows" class="nav-link">Nos bungalows</a></li>
-        <li class="nav-item"><a href="index.php#services" class="nav-link">Nos services</a></li>
-        <li class="nav-item"><a href="index.php#activity" class="nav-link">Activités</a></li>
-        <li class="nav-item"><a href="index.php#reservation" class="nav-link">Réservation</a></li>
-        <li class="nav-item"><a href="index.php#contact" class="nav-link">Contact</a></li>
-        <li class="nav-item"><a href="index.php#commentaires" class="nav-link">Les commentaires</a></li>
-      </ul>
-      <div class="hamburger">
-        <span class="bar"></span>
-        <span class="bar"></span>
-        <span class="bar"></span>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"><i class="bi bi-list"></i></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+        <div class="navbar-nav">
+          <a class="nav-link active" href=index.php#accueil">Accueil <span class="sr-only">(current)</span></a>
+          <a class="nav-link" href="index.php#bungalows">Bungalows</a>
+          <a class="nav-link" href="index.php#services">Services</a>
+          <a class="nav-link" href="index.php#activity">Activités</a>
+          <a class="nav-link" href="index.php#reservation">Reservations</a>
+          <a class="nav-link" href="index.php#contact">Contact</a>
+          <a class="nav-link" href="index.php#commentaires">Commentaires</a>
+        </div>
       </div>
     </nav>
   </header>

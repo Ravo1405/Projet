@@ -1,7 +1,5 @@
 <?php
-
 require_once 'models/Reservation.php';
-
 require_once 'utils.php';
 
 $regexphoneNumber = "/^0[1-79][0-9]{8}$/";
@@ -44,7 +42,6 @@ if (isset($_POST['update'])) {
         } else {
             $reservation->firstname = htmlspecialchars($_POST['firstname']);
         }
-
         // Vérification du numéro de téléphone
         if (empty($_POST['phoneNumber'])) {
             $errors[] = "Merci de renseigner un numéro de téléphone";
@@ -94,6 +91,7 @@ if (isset($_POST['update'])) {
             // Appel de la méthode d'insertion du reservation
             $reservation->updateOneReservation($id);
             $success = true;
+            header('location: liste-reservation.php');
         }
     }
 }

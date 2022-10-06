@@ -1,15 +1,9 @@
 <?php
 require_once './utils.php';
+require_once './models/Reservation.php';$regexphoneNumber = "/^0[1-79][0-9]{8}$/";$errors = [];
 
-require_once './models/Reservation.php';
-
-$regexphoneNumber = "/^0[1-79][0-9]{8}$/";
-
-$errors = [];
 $success = false;
-
 $reservation = new Reservation();
-
 $lastname = isset($_POST["lastname"]) ? $_POST["lastname"] : "";
 $firstname = isset($_POST["firstname"]) ? $_POST["firstname"] : "";
 $phoneNumber = isset($_POST["phoneNumber"]) ? $_POST["phoneNumber"] : "";

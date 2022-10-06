@@ -1,17 +1,13 @@
 <?php
-
 require_once 'DbConnector.php';
 
 /** Classe stockant les informations relatives à une réservation
- * 
  * Reservation est stockée dans la base de données de KantoLocation
  * pour les nominations futures.
- * 
  * @access public
  * */
 class Reservation extends DbConnector
 {
-
   public ?int $id;
   public ?string $lastname;
   public ?string $firstname;
@@ -71,7 +67,7 @@ class Reservation extends DbConnector
     return true;
   }
 
-  /** Requête pour récupérer toutes les réservations existantes dans la base de       *données et les afficher
+  /** Requête pour récupérer toutes les réservations existantes dans la base de données et les afficher
    * 
    * @return array tableau de reservations
    * @access public 

@@ -1,12 +1,8 @@
 <?php
 include './includes/header.php';
-
 require 'controllers/liste-reservationCtrl.php';
-
 ?>
-
 <main class="container-fluid mt-3">
-
     <h1 id="pagePatientsList" class="d-flex justify-content-center mt-5">LISTE DES RESERVATIONS</h1>
     <table class="table">
         <thead>
@@ -35,7 +31,7 @@ require 'controllers/liste-reservationCtrl.php';
                     <td><?= displayDate($reservation->endDate, "Y-m-d", "d/m/Y"); ?></td>
                     <td>
                         <a href="one-reservation.php?id=<?= $reservation->id; ?>">
-                            <button class="btn btn-sm btn-info">
+                            <button class="btn btn-sm btn-info mx-5">
                                 Voir
                             </button>
                         </a>
@@ -47,7 +43,5 @@ require 'controllers/liste-reservationCtrl.php';
     <a href="index.php#reservation">
         <button class="btn-success mt-3 mb-3">AJOUTER UNE RESERVATION</button>
     </a>
-     
 </main>
-
 <?php include './includes/footer.php'; ?>

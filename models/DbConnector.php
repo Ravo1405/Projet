@@ -2,7 +2,6 @@
 class DbConnector
 {
     protected PDO $pdo;
-
     /**
      * Permet la connexion à la BDD
      */
@@ -12,7 +11,7 @@ class DbConnector
             /** @var PDO $pdo  
              * Instance de l'objet PDO
              */
-            $this->pdo = new PDO('mysql:host=localhost;dbname=kantolocation;charset=utf8', 'root');
+            $this->pdo = new PDO('mysql:host=localhost;dbname=kantolocation;charset=utf8', 'root' );
             /**
              * PDO::ATTR_ERRMODE et PDO::ERRMODE_EXCEPTION permettent de spécifier à PDO que l'on veux des Exceptions à la place des erreurs PHP. Cela va permettre de les attraper dans le catch.
              */
@@ -21,12 +20,10 @@ class DbConnector
             die('Erreur : ' . $error->getMessage());
         }
     }
-
     /**
      * Cette methode est protected. 
      * Elle ne peut être appelé que dans la classe et ses enfants. 
      * Elle permet d'executer la requête SQL et de retourner le jeu de résultats.
-     *
      * @param [type] $query
      * @return array
      */
