@@ -4,13 +4,13 @@
 <h2 class="card-title">FIRAVOANA</h2>
 <div class="container">
     <div class="row justify-content-evenly">
-        <div class="col-4">
+        <div class="col-lg-6 col-xl-4">
             <img class="card-img" src="./asset/img/bungalow4.jpg" alt="photo bungalow">
         </div>
-        <div class="col-4">
+        <div class="col-lg-6 col-xl-4">
                 <img class="card-img" src="./asset/img/chambre4.jpg" alt="photo d'une chamber N°4">
             </div>
-        <div class="col-4">
+        <div class="col-xl-4">
         <p>6 personnes <br>prix/nuit : <strong>80€</strong><br>prix/7nuits : <strong>560€</strong></p>
             <p>Pour passer des vacances en famille ou entre amis, les bungalows les plus spacieux
                 accueillent <strong> 6 personnes</strong>.

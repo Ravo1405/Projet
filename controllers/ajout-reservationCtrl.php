@@ -1,6 +1,9 @@
 <?php
 require_once './utils.php';
-require_once './models/Reservation.php';$regexphoneNumber = "/^0[1-79][0-9]{8}$/";$errors = [];
+require_once './models/Reservation.php';
+
+$regexphoneNumber = "/^0[1-79][0-9]{8}$/";
+$errors = [];
 
 $success = false;
 $reservation = new Reservation();
@@ -42,7 +45,7 @@ if(isset($_POST['validate'])) {
         $errors[] = "Merci de renseigner un numéro de téléphone";
     }
     else if(!preg_match($regexphoneNumber, $_POST['phoneNumber'])) {
-        $errors[] = "Format de numéro de téléphoneNumber incorrect";
+        $errors[] = "Format de numéro de téléphone incorrect";
     }
     else {
         $reservation->phoneNumber = $_POST['phoneNumber'];
@@ -63,8 +66,8 @@ if(isset($_POST['validate'])) {
      if(!isset($_POST['shelterName'])) {
         $errors[] = "Merci de renseigner un nom";
     }
-    else if(strlen($_POST['shelterName']) > 10) {
-        $errors[] = "Le nom doit contenir maximum 9 caractères";
+    else if(strlen($_POST['shelterName']) != 9) {
+        $errors[] = "Le nom doit contenir 9 caractères";
     }
     else {
         $reservation->shelterName = htmlspecialchars($_POST['shelterName']);

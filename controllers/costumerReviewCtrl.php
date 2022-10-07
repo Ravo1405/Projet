@@ -5,7 +5,7 @@ require_once './models/CostumerReview.php';
 
 require_once './models/Reservation.php';
 
-$errors = [];
+$errorsReview = [];
 $success = false;
 $costumerReview = new CostumerReview();
 $reservation = new Reservation;
@@ -20,37 +20,37 @@ if(isset($_POST['send'])) {
 
     // Vérification du nom de famille
     if(empty($_POST['lastname'])) {
-        $errors[] = "Merci de renseigner un nom";
+        $errorsReview[] = "Merci de renseigner un nom";
     }
     else if(strlen($_POST['lastname']) > 25) {
-        $errors[] = "Le prénom doit contenir moins de 25 caractères";
+        $errorsReview[] = "Le prénom doit contenir moins de 25 caractères";
     }
     else {
         $costumerReview->lastname = htmlspecialchars($_POST['lastname']);
     }
     // Vérification de l'adresse email
     if(empty($_POST['email'])) {
-        $errors[] = "Merci de renseigner une adresse email";
+        $errorsReview[] = "Merci de renseigner une adresse email";
     }
     else if(!filter_var($_POST['email'], FILTER_VALIDATE_EMAIL)) {
-        $errors[] = "Format d'adresse email incorrect";
+        $errorsReview[] = "Format d'adresse email incorrect";
     }
     else {
         $costumerReview->email = $_POST['email'];
     }
      // Vérification si la date de publication est la date d'aujourd'hui
      if(empty($_POST['datePost'])) {
-        $errors[] = "Merci de marquer la date d'aujourd'hui!";
+        $errorsReview[] = "Merci de marquer la date d'aujourd'hui!";
     }
     else if(!validateDate($_POST['datePost'], 'Y-m-d')) {
-        $errors[] = "Format de date incorrect";
+        $errorsReview[] = "Format de date incorrect";
     }
     else {
         $costumerReview->datePost = $_POST['datePost'];
     }
      // Vérification du commentaire
      if(empty($_POST['comment'])) {
-        $errors[] = "Merci de saisir un commentaire";
+        $errorsReview[] = "Merci de saisir un commentaire";
     }
     else {
         $costumerReview->comment = htmlspecialchars($_POST['comment']);
@@ -60,13 +60,13 @@ if(isset($_POST['send'])) {
      if($costumerReview->isReservationExist()) {
         $costumerReview->idReservation =  $costumerReview->getReservation();
     } else {
-        $errors[] = "Vous pouvez mettre des commentaires après avoir réserver chez nous";
+        $errorsReview[] = "Vous pouvez mettre des commentaires après avoir séjourner chez nous";
     }
     // Le costumerReview existe-t-il déjà ?
     if($costumerReview->isCommentExist()) {
-        $errors[] = "Réservation non disponible, veuillez choisir une autre date";
+        $errorsReview[] = "Réservation non disponible, veuillez choisir une autre date";
     }
-    if(empty($errors)) {
+    if(empty($errorsReview)) {
         // Appel de la méthode d'insertion du commentaire
         $costumerReview->createComment();
         $success = true;
@@ -77,12 +77,3 @@ if(isset($_POST['send'])) {
 
 $commentsList = $costumerReview->getCommentsList();
 
-// //On appelle la méthode deleteComment pour supprimer un commentaire
-// if (isset($_POST['delete'])) {
-//     $id = $_POST['hidden'];
-//     if (isset($id)) {
-//         $costumerReview->id = $id;
-//         $costumerReview->deleteComment($_GET['id']);
-//         header('location: liste-reservation.php');
-//     }
-// }

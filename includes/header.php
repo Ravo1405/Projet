@@ -22,7 +22,7 @@
       </button>
       <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
         <div class="navbar-nav">
-          <a class="nav-link active" href=index.php#accueil">Accueil <span class="sr-only">(current)</span></a>
+          <a class="nav-link active" href=index.php#accueil>Accueil <span class="sr-only">(current)</span></a>
           <a class="nav-link" href="index.php#bungalows">Bungalows</a>
           <a class="nav-link" href="index.php#services">Services</a>
           <a class="nav-link" href="index.php#activity">Activités</a>

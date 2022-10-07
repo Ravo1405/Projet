@@ -80,7 +80,7 @@ require 'controllers/costumerReviewCtrl.php';
     </div>
 
     <div class="div-services">
-      <p>Resto</p>
+      <h3>Resto</h3>
       <img src="./asset/img/mangue-crevettes.jpg" class="img-fluid" alt="image d'une salade de mangue et crevettes">
       <div class="overlay">
         <div class="text">Miam! Nos plats sont cuisinés avec des produits frais. Le goût est au RVD!!</div>
@@ -88,7 +88,7 @@ require 'controllers/costumerReviewCtrl.php';
     </div>
 
     <div class="div-services">
-      <p>Wifi gratuit</p>
+      <h3>Wifi gratuit</h3>
       <img src="./asset/img_chevrons/wifi.jpg" class="img-fluid" alt="image d'une femme avec son ordinateur'">
       <div class="overlay">
         <div class="text">Vous profiterez d'une connexion internet gratuite!!</div>
@@ -96,7 +96,7 @@ require 'controllers/costumerReviewCtrl.php';
     </div>
 
     <div class="div-services">
-      <p>Piscine</p>
+      <h3>piscine</h3>
       <img src="./asset/img/petit-dej.jpg" class="img-fluid" alt="image d'une piscinne">
       <div class="overlay">
         <div class="text">Une piscine pour vous rafraîchir et vous détendre!!</div>
@@ -104,7 +104,7 @@ require 'controllers/costumerReviewCtrl.php';
     </div>
 
     <div class="div-services">
-      <p>Voiture</p>
+      <h3>Voiture</h3>
       <img src="./asset/img_chevrons/voiture.jpg" class="img-fluid" alt="image d'une voiture">
       <div class="overlay">
         <div class="text">Vous aurez une voiture avec chauffeur pour vos promenades!!</div>
@@ -112,7 +112,7 @@ require 'controllers/costumerReviewCtrl.php';
     </div>
 
     <div class="div-services">
-      <p>Vélos</p>
+      <h3>Vélos</h3>
       <img src="./asset/img_chevrons/velos.jpg" class="img-fluid" alt="image des vélos">
       <div class="overlay">
         <div class="text">Des vélos à votre dispositon pour une balade en couple ou en famille!!</div>
@@ -206,7 +206,7 @@ require 'controllers/costumerReviewCtrl.php';
 
     <div class="container">
       <div class="row">
-        <div class="coordinates col-sm">
+        <div class="coordinates col-md-6 col-xl-4">
           <p>
             KANTO LOCATION<br>Quartier Nord De Ranohira-Isalo, <br> Ranohira 313,<br> Madagascar
           </p>
@@ -220,11 +220,11 @@ require 'controllers/costumerReviewCtrl.php';
             <br>
           </p>
         </div>
-        <div class="col-sm coordinates-img  coordinate-baobab">
+        <div class="col-xl-4 coordinates-img  coordinate-baobab">
           <img class="coordinates" src="./asset/img/baobab.jpg" alt="image de baobab de Madagascar">
           <p class="baobab">BAOBAB AMOUREUX</p>
         </div>
-        <div class="col-sm coordinates-img">
+        <div class="col-md-6 col-xl-4 coordinates-img">
           <img class="coordinates" src="./asset/img/carte_madagascar_isalo.jpg" alt="carte de Madagascar">
         </div>
       </div>
@@ -238,31 +238,43 @@ require 'controllers/costumerReviewCtrl.php';
     <div class="shadow p-3 mb-5 bg-body rounded">
       <h1 class="tittle text-center">Commentaires</h1>
 
+      <?php if(!empty($errorsReview)) {
+        foreach($errorsReview as $error) {?>
+        <span class="text-danger"><?= $error; ?></span>
+         <!-- <p><?= $error; ?></p>  -->
+        <?php }
+      } ?>
 
-      <form class="form-commentaires col-6" method="POST">
-
-        <!-- Name input -->
+      <form class="form-commentaires " method="POST">
         <div class="form-outline mb-4">
           <label class="form-label" for="nom">Votre nom</label>
-          <input type="text" class="form-control text-center" name="lastname" id="nom" value="<?= $lastname ?>" placeholder="votre nom">
+          <div class="col-sm-12 col-md-8 col-lg-8">
+            <input type="text" class="form-control text-center" name="lastname" id="nom" value="<?= $lastname ?>" placeholder="votre nom">
+          </div>
         </div>
 
         <!-- Email input -->
         <div class="form-outline mb-4">
           <label class="form-label" for="email">Votre adresse mail</label>
-          <input type="text" class="form-control text-center" name="email" id="email" value="<?= $email ?>" placeholder="votre email">
+          <div class="col-sm-12 col-md-8 col-lg-8">
+            <input type="text" class="form-control text-center" name="email" id="email" value="<?= $email ?>" placeholder="votre email">
+          </div>
         </div>
 
         <!-- datePost input -->
         <div class="form-outline mb-4">
           <label class="form-label" for="date">Date d'aujourd'hui</label>
-          <input type="date" class="form-control text-center" name="datePost" id="date" value="<?= $datePost ?>" placeholder="la date d'aujourd'hui">
+          <div class="col-sm-12 col-md-8 col-lg-8">
+            <input type="date" class="form-control text-center" name="datePost" id="date" value="<?= $datePost ?>" onfocus="la date d'aujourd'hui">
+          </div>
         </div>
 
         <!-- Message input -->
         <div class="form-outline mb-4">
           <label class="form-label" for="comment">Vos commentaires</label>
-          <textarea class="form-control text-center" name="comment" id="comment" rows="4" value="<?= $comment ?>" placeholder="votre commentaires"></textarea>
+          <div class="col-sm-12 col-md-8 col-lg-8">
+            <textarea class="form-control text-center" name="comment" id="comment" rows="4"<?= $comment ?>><?= $comment ?></textarea>
+          </div>
         </div>
 
         <!-- Submit button -->
@@ -274,7 +286,7 @@ require 'controllers/costumerReviewCtrl.php';
       <?php
       foreach ($commentsList as $costumerReview) { ?>
         <div class="card">
-          <div class="card-body">
+          <div class="card-body col-sm-12 col-md-8 col-lg-8">
             <h5 class="card-title"><?= $costumerReview->lastname; ?></h5>
             <p class="card-text"><?= $costumerReview->datePost; ?></p>
             <p class="card-text"><?= $costumerReview->comment; ?></p>

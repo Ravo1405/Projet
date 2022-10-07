@@ -180,6 +180,9 @@ body {
   transform: translate(-50%, -50%);
   margin-right: 100px;
 }
+#services h3 {
+  font-weight: bold;
+}
 #services .btn {
   background: orangered;
   width: 6em;
@@ -329,116 +332,9 @@ label, input {
 
 /*MEDIA QUERIES*/
 
-/* Ceci s'applique aux écrans minimim 1520px de largeur */
-@media screen and (min-width: 1520px) {
-
-}
 
 
-/* Ceci s'applique aux écrans au dessous de 620px de largeur */
-@media screen and (max-width: 620px) {
-  .navbar-expand-lg {
-    height: 100px;
-  }
-  .tittle {
-    color: rgb(229, 118, 28);
-    text-align: center;
-    padding-top: 0.1em;
-    font-size: 1.5em;
-    font-weight: bold;
-  }
-  .shadow {
-    width: 90%;
-  }
-  #accueil {
-    height: 100%;
-  }
-  #accueil .btn {
-    width: 10em;
-    height: 2.5em;
-    font-size: 1em;
-    text-align: center;
-  }
-  /*CSS section bungalows */
-  #bungalows {
-    padding: 0 10%; 
-  }
-  .shadow {
-    width: 100%;
-  }
-  .card-img {
-    width: 100%;
-  }
-  .card-deck .card {
-    flex: none;
-  }
-  .service-text {
-    font-size: 0.4em;
-  }
-
-  /* css section SERVICES */
-  #services .div-services {
-    margin-left: 5em;
-  }
-  #services .div-services p {
-    font-size: 2em;
-  }
-  
-  #services .img-fluid {
-    margin: none;
-    height: 150px;
-  }
-  #services .overlay {
-    height: 110%;
-    width: 150%;
-    margin: 10px;
-  }
-  #services .btn {
-    width: 10em;
-    height: 2.5em;
-    font-size: 1em;
-    text-align: center;
-  }
-
-  /* CSS section RESERVATION */
-  .row-fieldset {
-    width: 95%;
-    margin-left: 100px;
-  }
-  .form-reservation .text {
-    text-align: start;
-  }
-  .text-center {
-    text-align: none;
-  }
-  .coordonées {
-    padding-left: 195px;
-  }
-  .btn:not(:disabled):not(.disabled) {
-    margin-left: 6em;
-  }
-
-  .coordinates-img {
-    display: none;
-  }
-
-  /* CSS section COMMENTAIRES */
-  #commentaires .form-commentaires {
-    margin-left: 10em;
-  }
-
-  .btn-commentaires {
-    width: 13em;
-    margin-left: 0;
-  }
-  .card {
-    width: 100%;
-    margin-left: 0;
-  }
-
-}
-
-/* Ceci s'applique aux écrans au dessous de 980px de largeur */
+/* Ceci s'applique aux écrans au dessous de 960px de largeur */
 @media screen and (max-width: 980px) {
   .navbar-expand-lg {
     height: 120px;
@@ -446,6 +342,9 @@ label, input {
   i.bi-list {
     font-size: 60px;
     margin-bottom: 5px;
+  }
+  .navbar-nav {
+    align-items: flex-end;
   }
 
   .nav-link {
@@ -479,8 +378,9 @@ label, input {
     margin: 0;
   }
   #bungalows .card-img {
-    width: 290px;
+    width: 100%;
   }
+
 
   /* CSS section SERVICES */
 /* .service-text {
@@ -491,7 +391,7 @@ label, input {
     margin-left: 10em;
   }
   #services .div-services p {
-    font-size: 2em;
+      font-size: 2em;
   }
   
   #services .img-fluid {
@@ -541,5 +441,128 @@ label, input {
   .card {
     margin-left: 15em;
   }
+}
+
+/* Ceci s'applique aux écrans au dessous de 620px de largeur */
+@media screen and (max-width: 720px) {
+
+  .tittle {
+    color: rgb(229, 118, 28);
+    text-align: center;
+    padding-top: 0.1em;
+    font-size: 1.5em;
+    font-weight: bold;
+  }
+  .shadow {
+    width: 90%;
+  }
+  #accueil {
+    height: 100%;
+  }
+  #accueil .btn {
+    width: 10em;
+    height: 2.5em;
+    font-size: 1em;
+    text-align: center;
+  }
+  /* CSS section bungalows */ 
+   #bungalows {
+    padding: 0 10%; 
+  }
+  .shadow {
+    width: 100%;
+  }
+  .card-img {
+    width: 100%;
+    height: 400px;
+  }
+  .card-deck .card {
+    flex: none;
+  }
+  .service-text {
+    font-size: 0.4em;
+  }
+
+  /* css section SERVICES */
+  #services .div-services {
+    margin-left: 0;
+    width: 90%;
+
+  }
+  #services p {
+    font-size: 1em;
+  }
+  #services h3 {
+    font-size: 20px;
+  }
+  #services .div-services .text {
+    font-size: 1em;
+  }
+  
+  #services .img-fluid {
+    /* margin: none; */
+    width: 100%;
+    height: 250px;
+  }
+  #services .overlay {
+    height: 100%;
+    width: 105%;
+    margin: 10px;
+  }
+  #services .btn {
+    width: 10em;
+    height: 2.5em;
+    font-size: 1em;
+    text-align: center;
+  }
+
+  /* CSS section RESERVATION */
+  .row-fieldset {
+    width: 95%;
+    margin-left: 100px;
+  }
+  .form-reservation .text {
+    text-align: start;
+  }
+  .text-center {
+    text-align: none;
+  }
+
+  /* CSS section CONTACT */
+  
+  #contact .coordinates {
+    width: 600px;
+    height: 450px;
+    line-height: 40px;
+    padding-top: 5px;
+  }
+  #contact .row {
+    flex-wrap: nowrap;
+  }
+  #contact .a-bientot {
+    font-size: 1.5em;
+  }
+  .btn:not(:disabled):not(.disabled) {
+    margin-left: 6em;
+  }
+
+  .coordinates-img {
+    display: none;
+  }
+
+  /* CSS section COMMENTAIRES */
+  /* #commentaires .form-commentaires {
+    margin-left: 10em;
+  } */
+
+  .btn-commentaires {
+    width: 13em;
+    margin-left: 1em;
+  }
+  .card {
+    width: 100%;
+    margin-left: 0;
+  }
+
 }
 

@@ -69,7 +69,7 @@ require 'controllers/one-reservationCtrl.php';
                 <div class="form-label row mb-3">
                     <label for="phone" class="form-label col-sm-3">Téléphone</label>
                     <div class="col-sm-9">
-                        <input type="text" class="form-control text-center" name="phoneNumber" id="phone" placeholder="Format: 06 12 34 56 78 ">
+                        <input type="text" class="form-control text-center" name="phoneNumber" id="phone" value="<?= $oneReservation->phoneNumber ?>" placeholder="Format: 06 12 34 56 78 ">
                         <span class="text-danger"><?= isset($errors['phoneNumber']) ? $errors['phoneNumber'] : '' ?></span>
                     </div>
                 </div>
